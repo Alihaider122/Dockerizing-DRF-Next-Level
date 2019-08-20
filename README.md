@@ -10,7 +10,7 @@ $ docker-compose up <br/>
 
 
 And access API endpoints on <br/> 
-http://localhost:8000/api/v1//users/ <br/>
+http://localhost:8000/api/v1/users/ <br/>
 http://localhost:8000/api/v1/projects/ <br/>
 
 
