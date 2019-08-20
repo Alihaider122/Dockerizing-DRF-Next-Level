@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+  db:
+    image: postgres:9.6
+    env_file:
+      - .env
+    volumes:
+      - dev-db:/var/lib/postgresql/data
+  backend:
+    restart: always
+    env_file:
+      - .env
+    image: hamzacms_backend
+    build: ./
+    command: >
+      bash -c "python wait_for_postgres.py &&
+               python manage.py migrate &&
+               python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+
+volumes:
+  node-modules:
+  static-build:
+  dev-db:
+    external:
+      name: hamzacms-db

@@ -1,0 +1,22 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django = "*"
+pytest = "*"
+djangorestframework = "*"
+pytest-django = "*"
+psycopg2 = "*"
+uuid = "*"
+django-extensions = "*"
+pytz = "*"
+faker = "*"
+factory-boy = "*"
+pytest-factoryboy = "*"
+
+[requires]
+python_version = "3.7"
